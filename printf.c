@@ -22,7 +22,12 @@ int handle_format_specifier(char specifier, va_list arguments)
 			write(1, "%", 1);
 			return (1);
 		default:
-			write(1, &specifier, 1);
+			write(1, "%", 1);
+			if (specifier != ' ')
+			{
+				write(1, &specifier, 1);
+				return (2);
+			}
 			return (1);
 	}
 	return (handler ? handler(arguments) : 0);
