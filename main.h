@@ -12,5 +12,6 @@ int _printf(const char *format, ...);
 
 int _print_string(va_list arguments);
 int _print_char(va_list arguments);
+int handle_format_specifier(char specifier, va_list arguments);
 
 #endif
