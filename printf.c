@@ -1,6 +1,11 @@
 #include "main.h"
 #include <unistd.h>
-
+/**
+ * handle_format_specifier - Entry
+ * @specifier:param
+ * @arguments: param
+ * Return: int
+ */
 int handle_format_specifier(char specifier, va_list arguments)
 {
 	ConversionHandler handler = NULL;
@@ -16,14 +21,17 @@ int handle_format_specifier(char specifier, va_list arguments)
 		case '%':
 			write(1, "%", 1);
 			return (1);
-			break;
 		default:
 			write(1, &specifier, 1);
 			return (1);
 	}
 	return (handler ? handler(arguments) : 0);
 }
-
+/**
+ * _printf - Entry point
+ * @format: param
+ * Return: int
+ */
 int _printf(const char *format, ...)
 {
 	int char_count;

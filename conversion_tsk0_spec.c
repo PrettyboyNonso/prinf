@@ -1,5 +1,10 @@
 #include <unistd.h>
 #include "main.h"
+/**
+ * _print_string - Entry point
+ * @arguments: param
+ * Return: int
+ */
 int _print_string(va_list arguments)
 {
 	char *arg_value;
@@ -23,9 +28,15 @@ int _print_string(va_list arguments)
 		return (char_count);
 	}
 }
+/**
+ * _print_char - Entry point
+ * @arguments: param
+ * Return: int
+ */
 int _print_char(va_list arguments)
 {
 	char arg_value;
+
 	arg_value = (char)va_arg(arguments, int);
 	write(1, &arg_value, 1);
 	return (1);
