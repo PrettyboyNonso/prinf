@@ -2,24 +2,16 @@
 #define MAIN_H
 
 #include <stdarg.h>
+#include <stdarg.h>
+#include <stdlib.h>
 
-typedef void (*format_handler)(va_list argument, int counter);
+typedef int (*ConversionHandler)(va_list);
 
-/**
- * struct Format_pointer_safer - structure
- * @s: A member
- * @c: A member
- * @percent: A member
- */
-struct Format_pointer_safer
-{
-	format_handler s;
-	format_handler c;
-	format_handler percent;
-};
+int _printf(const char *format, ...);
 
-void handle_strings(va_list arguments, int counter);
-void handle_characters(va_list arguments, int counter);
-void handle_percent(va_list arguments, int counter);
+
+int _print_string(va_list arguments);
+int _print_char(va_list arguments);
+int _print_percent(va_list arguments);
 
 #endif
