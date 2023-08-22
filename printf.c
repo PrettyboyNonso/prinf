@@ -6,31 +6,38 @@
  * @arguments: param
  * Return: int
  */
-int handle_format_specifier(char specifier, va_list arguments)
+int handle_format_specifier(const char *format, int *i, va_list arguments)
 {
-	ConversionHandler handler = NULL;
+    ConversionHandler handler = NULL;
+    int char_count = 0;
 
-	switch (specifier)
-	{
-		case 's':
-			handler = _print_string;
-			break;
-		case 'c':
-			handler = _print_char;
-			break;
-		case '%':
-			write(1, "%", 1);
-			return (1);
-		default:
-			write(1, "%", 1);
-			if (specifier != ' ')
-			{
-				write(1, &specifier, 1);
-				return (2);
-			}
-			return (1);
-	}
-	return (handler ? handler(arguments) : 0);
+    char specifier = format[*i]; // Get the current specifier
+
+    switch (specifier)
+    {
+        case 's':
+            handler = _print_string;
+            break;
+        case 'c':
+            handler = _print_char;
+            break;
+        case '%':
+            handler = _print_percent;
+            break;
+        default:
+            write(1, "%", 1);
+            while (specifier != ' ')
+            {
+                write(1, &specifier, 1);
+                char_count++;
+                // Move to the next character in the format string
+                (*i)++;
+                specifier = format[*i];
+            }
+            return char_count;
+    }
+
+    return handler ? handler(arguments) : 0;
 }
 /**
  * _printf - Entry point
