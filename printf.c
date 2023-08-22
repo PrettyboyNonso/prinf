@@ -21,12 +21,12 @@ int handle_format_specifier(char specifier, va_list arguments)
 		case '%':
 			write(1, "%", 1);
 			return (1);
-		default:
+		default :
 			write(1, "%", 1);
 			if (specifier != ' ')
 			{
-				write(1, &specifier, 1);
-				return (2);
+			write(1, &specifier, 1);
+			return (2);
 			}
 			return (1);
 	}
@@ -50,7 +50,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		write(1, "", 1);
 		return (-1);
 	}
 	for (i = 0; format[i] != '\0'; i++)
