@@ -15,7 +15,7 @@ int _print_string(va_list arguments)
 	if (arg_value == NULL)
 	{
 		write(1, "(null)", 6);
-		return (6);
+		char_count += 6;
 	}
 	else
 	{
