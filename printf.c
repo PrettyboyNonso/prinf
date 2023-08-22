@@ -21,7 +21,7 @@ int handle_format_specifier(char specifier, va_list arguments)
 		case '%':
 			write(1, "%", 1);
 			return (1);
-		default :
+		default:
 			write(1, "%", 1);
 			if (specifier != ' ')
 			{
