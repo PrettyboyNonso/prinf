@@ -1,1 +1,2 @@
-First group project, paired with Zeenotek
+First group project collaboration with prettyboyNonso
+
