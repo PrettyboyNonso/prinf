@@ -42,11 +42,6 @@ int _printf(const char *format, ...)
 
 	char_count = 0;
 
-	if (format == NULL)
-	{
-		write(1, "", 1);
-		return (0);
-	}
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
