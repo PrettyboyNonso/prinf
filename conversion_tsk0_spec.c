@@ -15,7 +15,7 @@ int _print_string(va_list arguments)
 	if (arg_value == NULL)
 	{
 		write(1, "(null)", 6);
-		return (6);
+		return 6;
 	}
 	else
 	{
@@ -25,7 +25,7 @@ int _print_string(va_list arguments)
 			write(1, &arg_value[j], 1);
 			char_count++;
 		}
-		return (char_count);
+		return char_count;
 	}
 }
 /**
@@ -39,6 +39,6 @@ int _print_char(va_list arguments)
 
 	arg_value = (char)va_arg(arguments, int);
 	write(1, &arg_value, 1);
-	return (1);
+	return 1;
 }
 
