@@ -58,10 +58,17 @@ int _print_int(va_list arguments)
 
 	arg_value = va_arg(arguments, int);
 	newint = intToString(arg_value);
-	for (i = 0; newint[i] != '\0'; i++)
+	if (arg_value == 0)
 	{
+	write(1, "0", 1);
+	}
+	else
+	{
+	for (i = 0; newint[i] != '\0'; i++)
+        {
 		write(1, &newint[i], 1);
 		char_count++;
+	}
 	}
 	return (char_count);
 }
