@@ -13,7 +13,11 @@ char *intToString(int n)
 
 	count = 0;
 	new_str = malloc(sizeof(char) * 20);
-	if (n > 0)
+	if (n == 0)
+	{
+	n = '0';
+	}
+	else if (n > 0)
 	{
 		while (n > 0)
 		{
