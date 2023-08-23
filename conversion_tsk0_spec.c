@@ -42,50 +42,26 @@ int _print_char(va_list arguments)
 	return (1);
 }
 /**
- * _print_char - Entry point
+ * _print_int - Entry point
  * @arguments: param
  * Return: int
  */
+
 int _print_int(va_list arguments)
 {
-	int arg_value;
-	int char_count;
-	int num_digits;
-	int digit;
 	int i;
-	char int_buffer[12];
+	int arg_value;
+	char *newint;
+	int char_count;
 
-	arg_value = va_arg(arguments, int);
 	char_count = 0;
 
-	if (arg_value < 0)
+	arg_value = va_arg(arguments, int);
+	newint = intToString(arg_value);
+	for (i = 0; newint[i] != '\0'; i++)
 	{
-		write(1, "-", 1);
-		char_count++;
-		arg_value = -arg_value;
-	}
-
-	num_digits = 0;
-
-	if (arg_value == 0)
-	{
-		write(1, "0", 1);
-		return (1);
-	}
-
-	while (arg_value > 0)
-	{
-		digit = arg_value % 10;
-		int_buffer[num_digits] = digit + '0';
-		num_digits++;
-		arg_value /= 10;
-	}
-
-	for (i = num_digits - 1; i >= 0; i--)
-	{
-		write(1, &int_buffer[i], 1);
+		write(1, &newint[i], 1);
 		char_count++;
 	}
-
 	return (char_count);
 }

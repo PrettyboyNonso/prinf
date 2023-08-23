@@ -8,7 +8,9 @@
 typedef int (*ConversionHandler)(va_list);
 
 int _printf(const char *format, ...);
-
+int _strlen(char *str);
+char *reversestr(char *str);
+char *intToString(int value);
 
 int _print_string(va_list arguments);
 int _print_char(va_list arguments);
