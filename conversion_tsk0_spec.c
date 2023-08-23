@@ -61,6 +61,7 @@ int _print_int(va_list arguments)
 	if (arg_value == 0)
 	{
 	write(1, "0", 1);
+	char_count++;
 	}
 	else
 	{
