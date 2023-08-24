@@ -29,5 +29,5 @@ char *reversestr(char *str)
 
 	reversestr[lenght] = '\0';
 
-	return reversestr;
+	return (reversestr);
 }
