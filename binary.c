@@ -12,10 +12,7 @@ char *binary(int n)
 
 	count = 0;
 	new_str = malloc((sizeof(char) * 20) + 1);
-	if (n == 0)
-	{
-	write (1, "0", 1);
-	}
+
 	while (n > 0)
 	{
 		new_str[count] = ((n % 2) + '0');
