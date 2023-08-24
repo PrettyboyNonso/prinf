@@ -82,16 +82,17 @@ int _print_int(va_list arguments)
 
 int _print_bin(va_list arguments)
 {
-	char *arg_value;
+	int arg_value;
 	int char_count;
 	char *newint;
 	int j;
 
-	arg_value = va_arg(arguments, char *);
-	newint = intToString(arg_value);
+	char_count = 0;
+	arg_value = va_arg(arguments, int);
+	newint = binary(arg_value);
 	if (arg_value == 0)
 	{
-		write(1, &newint[j], 1);
+		write(1, "0", 1);
 		char_count++;
 	}
 	for (j = 0; newint[j] != '\0'; j++)
