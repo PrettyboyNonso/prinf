@@ -15,5 +15,5 @@ int _strlen(char *str)
 	{
 		count++;
 	}
-	return (void);
+	return (count);
 }
