@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdint.h>
+#include <limits.h>
 typedef int (*ConversionHandler)(va_list);
 
 int _printf(const char *format, ...);
