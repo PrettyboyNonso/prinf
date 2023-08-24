@@ -13,13 +13,13 @@ char *intToString(int n)
 
 	count = 0;
 	new_str = malloc(sizeof(char) * 20);
-	if n == 0
+	if (n == 0)
 	{
 	n = '0';
 	}
-	else if n > 0
+	else if (n > 0)
 	{
-		while n > 0
+		while (n > 0)
 		{
 			remainder = n % 10;
 			new_str[count] = remainder + '0';
@@ -27,11 +27,11 @@ char *intToString(int n)
 			count++;
 		}
 	}
-	else if n < 0
+	else if (n < 0)
 	{
 		n = n * -1;
 		count = 1;
-		while n != -0
+		while (n != -0)
 		{
 			remainder = n % 10;
 			new_str[count] = remainder + '0';
@@ -43,5 +43,5 @@ char *intToString(int n)
 	new_str[count] = '\0';
 	reversed = reversestr(new_str);
 
-	return reversed;
+	return (reversed);
 }
