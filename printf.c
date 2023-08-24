@@ -25,6 +25,9 @@ int handle_format_specifier(char specifier, va_list arguments)
 		case 'i':
 			handler = _print_int;
 			break;
+		case 'b':
+			handler = _print_bin;
+			break;
 		default:
 			write(1, &specifier, 1);
 			return (1);

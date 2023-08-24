@@ -73,3 +73,31 @@ int _print_int(va_list arguments)
 	}
 	return (char_count);
 }
+
+/**
+ * _print_bin - Entry point
+ * @arguments: param
+ * Return: int
+ */
+
+int _print_bin(va_list arguments)
+{
+	char *arg_value;
+	int char_count;
+	char *newint;
+	int j;
+
+	arg_value = va_arg(arguments, char *);
+	newint = intToString(arg_value);
+	if (arg_value == 0)
+	{
+		write(1, &newint[j], 1);
+		char_count++;
+	}
+	for (j = 0; newint[j] != '\0'; j++)
+	{
+		write(1, &newint[j], 1);
+		char_count++;
+	}
+	return (char_count);
+}
